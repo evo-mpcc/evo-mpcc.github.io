@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Project Page for EVO-MPCC: Enhanced Velocity Optimization with Learning-Based Auto-Tuning for Real-Time Vehicle Trajectory Planning.">
+  <meta name="keywords" content="Local Trajectory Planning, Model Predictive Contouring Control, Collision Avoidance,  Bayesian Optimization,  Roboracer Platform">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- TODO: -->
+  <meta name="author" content="Under Review">
+  <title>EVO-MPCC: Enhanced Velocity Optimization with Learning-Based Auto-Tuning for Real-Time Vehicle Trajectory Planning</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/index_compdfu.css">
+  <link rel="stylesheet" href="bootstrap-grid.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/index_compdfu.js"></script>
+  <script src="load-mathjax.js" async></script>
+
+  <link rel="stylesheet" href="./static/css/splide.min.css">
+  <script src="./static/js/splide.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="./materials/favicon.ico" />
+
+</head>
+
+<body>
+
+<!-- Title -->
+<section class="hero" style="background-color: #ebf0f1;">
+  <div class="hero-body hero-body-dec19" >
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- is-1 or is-2 -->
+          <h1 class="title publication-title" style="font-size: 48px;">
+            EVO-MPCC: Enhanced Velocity Optimization </br> with Learning-Based Auto-Tuning for Real-Time Vehicle Trajectory Planning
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <!-- TODO: -->
+            <span class="author-block">
+              <a href="https://zhouhengli.github.io/" target="_blank" rel="noopener noreferrer">
+                Zhouheng Li
+              </a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=4-y05XwAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Bei Zhou</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=xtgKwEoAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Mattia Piccinini</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=1LV1boEAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Cheng Hu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=akjCRwMAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Baha Zarrouki</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=b9WsJN4AAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Rahul Mangharam</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=7ZZ_-m0AAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Lei Xie</a><sup>1</sup>
+            </span>
+
+          </div>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <sup>1</sup> Zhejiang University
+            </span>
+            <span class="author-block">
+              <sup>2</sup> Technical University of Munich
+            </span>
+            <span class="author-block">
+              <sup>3</sup> University of Pennsylvania
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Arxiv -->
+               <span class="link-block">
+                <a href="TBA"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              
+              <!-- TODO: -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/zhouhengli/VPMPCC"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+            </div>
+
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-4">Meta-World Environment</h2> -->
+        <h2 class="title is-4">Feasible and Aggressive Cornering Trajectories</h2>
+
+        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
+          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
+            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
+              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
+
+                <div style="display: flex; justify-content: center; gap: 24px; align-items: flex-start;">
+                  <div style="text-align: center;">
+                    <div style="margin-bottom: 8px;  font-size: 1.1em;">
+                      Exposure time of 4s
+                    </div>
+                      <img src="./materials/media/corners/stack1.jpg" alt="Exposure time of 4s" style="max-width: 100%; width: 460px; border-radius: 12px;">
+                  </div>
+
+                  <div style="text-align: center;">
+                    <div style="margin-bottom: 8px;  font-size: 1.1em;">
+                      Exposure time of 2.5s
+                    </div>
+                    <img src="./materials/media/corners/stack2.jpg" alt="Exposure time of 2.5s" style="max-width: 100%; width: 590px; border-radius: 12px;">
+                  </div>
+                </div>  
+
+                <br/>
+                <p>
+                  <div class="left-caption">
+
+                    <b>EVO-MPCC Enables Planning Feasible Cornering Trajectories on Mixed Racetracks.</b> 
+                    The figure compares the trajectories of the proposed Enhanced Velocity Optimization MPCC (EVO-MPCC) and other optimal control problem (OCP)-based planners, in high-curvature corners with the RoboRacer vehicle. The driven trajectories are visualized through long-exposure photography, illustrating that EVO-MPCC outperforms the benchmarks by achieving higher progress along the racetrack.
+
+                  </div>
+                </p>
+          </div>  
+        </section>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified div_abs_text">
+          <p>
+
+            Model Predictive Contouring Control (MPCC) is widely adopted in autonomous racing for its effectiveness in modeling racing progress; however, existing versions struggle to balance path progress and cornering feasibility on racetracks with rapidly varying curvature and rely heavily on manual parameter tuning, which may lead to unsafe behaviors. To address these challenges, this paper proposes an Enhanced Velocity Optimization Model Predictive Contouring Control <b class="cpdfu_gradient_text">(EVO-MPCC)</b> framework that explicitly incorporates a reference velocity profile (RVP) into the MPCC objective and employs Bayesian optimization for automatic parameter tuning. By performing continuous velocity optimization along the racetrack, EVO-MPCC enables feasible cornering and high-performance racing even under a limited prediction horizon. Based on the RVP, two complementary formulations are developed: <b class="cpdfu_gradient_text">EVO-RVT</b>, which performs Reference Velocity Tracking (RVT) for high-performance racing in obstacle-free scenarios, and <b class="cpdfu_gradient_text">EVO-TVC</b>, which introduces an RVP-based Terminal Velocity Cost (TVC) to enable flexible, collision-free, and time-efficient overtaking. Additionally, a lap-time minimization (LTM) objective is formulated for Bayesian optimization to tune high-performance planner parameters automatically. The proposed framework is validated on the RoboRacer platform through extensive simulation and real-world experiments. Results show that EVO-TVC achieves a 9.81% relative lap-time advantage over hierarchical overtaking approaches. At the same time, EVO-RVT reaches 98.23% of the reference projected velocity with a mean computation time of 6.41 ms, demonstrating consistent high-speed performance over multiple consecutive laps, and a 50.42% improvement in energy efficiency relative to offline-planned trajectories.
+          </p>
+          
+        </div>
+        
+        <img src="materials/media/pipeline/pipeline.jpg" alt="" style="max-width: 900px; display: block; margin: 0 auto;" />
+
+        <p style="text-align: left;">
+          <b>Proposed Framework for LTM-Based BO Auto-Tuning of the Parameters of a new EVO-MPCC Trajectory Planner.</b>
+          The black arrows represent the evaluation process of the current parameter, while the light brown arrows denote the next parameter selected by the acquisition function for evaluation. The closed-loop training terminates at the N_BO iteration.
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Motivation</h2>
+          <p>
+            <div class="left-caption">
+              <b>Key findings:</b>
+              Conventional MPCC parameter tuning is challenging on mixed racetracks.
+            </div>
+          </p> 
+        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
+          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
+            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
+              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
+
+              <p>
+                <div class="left-caption">
+                  <b>Issues and conflicts of short-prediction-horizon MPCC:</b>
+
+                    From the formulation of short-horizon MPCC, mixed racetracks inherently impose mutually conflicting requirements on a single set of controller parameters.
+                    On high-curvature corners, feasible and safe trajectory planning requires a large penalty on the lag error together with a relatively small progression weight to ensure cornering feasibility.
+                    In contrast, high-performance racing on long straight segments demands aggressive acceleration and rapid path progression, which are typically achieved by reducing the lag error weight and increasing the progression weight.
+
+                    These fundamentally contradictory parameter requirements must be satisfied simultaneously across heterogeneous racetrack geometries, forcing the MPCC to adopt a conservative parameterization dominated by the most restrictive scenarios—sharp corners. Consequently, acceleration capability on straight segments is unnecessarily limited, leading to suboptimal exploitation of straight-line performance and a degradation in overall lap time.
+                  
+                </div>
+              </p>
+                <!-- <br/> -->
+                
+          </div>  
+        </section>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Numerical Simulation Results for Racing and Obstacle Avoidance </h2>
+
+          <div class="cpdfu_base_row">
+            <div class="multi_hor_rm2d_item">
+              <img src="materials/media/rvt-sim/tracks.png" alt="" style="max-width: 1000px">
+            </div>
+          </div>
+
+          <p>
+            <div class="left-caption">
+              <b>Racetracks Employed in Simulation and Real-world Experiments.</b> 
+              Each track includes its offline-calculated raceline (minimum-curvature path) and ggv-constrained corresponding reference velocity profiles (RVPs)  in m/s. Track1 and Track2 are self-constructed, while Track3 is obtained from the official competition racetrack of the 18th Roboracer Autonomous Grand Prix.
+
+            </div>
+          </p>
+          <hr>
+
+          <div class="cpdfu_base_row">
+            <div class="multi_hor_rm2d_item">
+              <img src="materials/media/rvt-sim/rvt_sim_table.png" alt="" style="max-width: 1000px">
+            </div>
+          </div>
+
+
+          <div class="cpdfu_base_row">
+            <div class="multi_hor_rm2d_item">
+              <img src="materials/media/rvt-sim/rvt_shortcut.png" alt="" style="max-width: 1000px">
+            </div>
+          </div>
+
+          <p>
+            <div class="left-caption">
+
+              Our results indicate that the best lap times achieved by EVO-RVT through BO training outperform the offline trajectories on racetracks with consecutive corners. This improvement is realized by shortening the racing trajectory. Furthermore, the trained parameters exhibit the ability to generalize across various racetracks. In addition, the proposed LTM-based objective enables consistently strong BO training performance across different racetracks, demonstrating its practicality for track-specific parameter tuning.
+
+            </div>
+          </p>
+          <hr>
+
+          <div class="cpdfu_base_row">
+            <div class="multi_hor_rm2d_item">
+              <img src="materials/media/overtaking/ot.png" alt="" style="max-width: 1000px">
+            </div>
+          </div>
+
+          <p>
+            <div class="left-caption">
+              <b>EVO-MPCC with TVC (EVO-TVC) Enables Collision-free Overtaking near the Limits.</b> 
+              The Terminal Velocity Cost (TVC) provides increased replanning flexibility, allowing the vehicle to avoid obstacles without excessively slowing down. In contrast, RVT greatly reduces its speed when approaching the obstacles, as shown in (a) and (b).
+
+            </div>
+          </p>
+          <!-- <hr> -->
+
+          
+          
+          
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Real-World Validation of Feasibility and Aggressiveness</h2>
+        <div class="container bg-3">
+          <div class="centered-caption" style="justify-content: center;">
+
+
+
+            <div class="cpdfu_base_row">
+              <div class="multi_hor_rm2d_item">
+                <img src="materials/media/results/fig_real_racing.png" alt="" style="max-width: 1000px">
+              </div>
+            </div>
+
+            <p>
+              <div class="left-caption">
+                <b>EVO-MPCC with RVT (EVO-RVT)  Maintains Smooth And Feasible Racing Trajectories In Consecutive Corners And Sharp Turns, Achieving Aggressive Yet Feasible Cornering Without Running Close To The Track Boundaries.</b> 
+                Its trajectories remain consistently close to the offline reference and exhibit more uniform cornering behavior, whereas several baselines show either conservative detours or increased boundary proximity in sharp corners. These observations highlight the high feasibility and racing performance of EVO-RVT in complex cornering scenarios.
+
+              </div>
+            </p>
+            <hr>
+                        
+            <div style="display: flex; justify-content: center; gap: 24px; align-items: flex-start;">
+
+              <div style="text-align: center;">
+                <div style="margin-bottom: 8px;  font-size: 1.1em;">
+                  Comparison of computation efficiency and lap time repeatability.
+                </div>
+                <img src="materials/media/results/lap_time_CT.png" style="max-width: 100%; width: 1000px; border-radius: 12px;">
+              </div>
+            </div>  
+
+            <p>
+              <div class="left-caption">
+                <b>Computational Efficiency (a) and Repeatability (b) of EVO-RVT Over Multiple Racing Laps, with the Real-World RoboRacer Vehicle.</b>
+                In the absence of disturbances in the localization module (TG0), our EVO-RVT maintains highly repeatable lap times over 10 consecutive laps.
+              </div>
+            </p>    
+
+            <hr>
+
+            <div class="video-container" style="gap: -25px" >
+
+                <div class="continuous_racing_item" id="First_Viewpoint_id">
+                  <p class="splide_lb_suc_vs_rollout_repl cal_our_qual_caption">
+                    First Viewpoint
+                    <span class="splide_kuka_prob_id_repl">
+                      <span class="replay_lb_suc" video_section="First_Viewpoint_id">
+                        <img src="static/replay.png" />
+                        <span>replay</span>
+                      </span>
+                    </span>
+                  </p>
+                  <video id="antmaze_exp_qual_list_dset" muted autoplay="" preload="metadata" style="max-width: 400px">
+                    <source src="materials/media/real_racing/first_view.webm"  type="video/webm">
+                  </video>
+                </div>
+
+                <div class="continuous_racing_item" id="Third_Viewpoint_id">
+                  <div class="multi_hor_rm2d_caption cal_our_qual_caption" > 
+                    Third Viewpoint
+                    <span class="splide_kuka_prob_id_repl">
+                      <span class="replay_lb_suc" video_section="Third_Viewpoint_id">
+                        <img src="static/replay.png" />
+                        <span>replay</span>
+                      </span>
+                    </span>
+                  </div>
+
+                  <video id="antmaze_exp_qual_list_rollout" muted autoplay="" preload="metadata" style="max-width: 520px">
+                    <source src="materials/media/real_racing/third_view.webm" type="video/webm">
+                  </video>
+
+                </div>
+            </div>
+
+            <div class="left-caption" style="margin-top: 10px;">
+              <b>EVO-MPCC has been successfully deployed on the real-world RoboRacer platform, demonstrating both feasible and aggressive racing. It secured <a href="https://iv2024-race.f1tenth.org/results.html" style="text-decoration: none;" target=_blank>4th place in the Roboracer competition at IV2024</a>.</b> 
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified div_abs_text">
+          <p>
+
+             This paper presents an <b class="cpdfu_gradient_text">Enhanced Velocity Optimization MPCC (EVO-MPCC)</b> framework for high-performance autonomous racing. By explicitly integrating velocity optimization into MPCC, the proposed approach effectively balances aggressive racing behavior with stable cornering performance under limited prediction horizons. An LTM-based Bayesian Optimization (BO) module is further introduced to enable efficient and automated parameter tuning. Real-world experiments demonstrate that EVO-RVT consistently achieves a mean projected velocity of <b>98.23%</b> of the reference performance limit, while maintaining real-time feasibility with an average computation time of only <b>6.41 ms</b>. In addition, EVO-RVT reliably completes multiple consecutive laps and improves onboard energy efficiency by more than <b>50%</b> compared to offline-planned trajectories, highlighting its robustness and efficiency in real-world racing scenarios.
+             <br/>
+
+              The proposed EVO-MPCC framework comprises two complementary formulations targeting different racing tasks. EVO-RVT focuses on high-performance racing in obstacle-free scenarios by continuously optimizing vehicle velocity along the racetrack using a reference velocity profile, allowing the planner to accurately identify appropriate braking points and generate feasible cornering trajectories even with a short prediction horizon. EVO-TVC extends this framework to overtaking scenarios by introducing reference-velocity-based terminal velocity cost together with adaptively weighted collision-avoidance costs, thereby preserving sufficient maneuvering flexibility while ensuring safety. Experimental results show that EVO-TVC achieves a <b>9.81%</b> reduction in lap time compared to hierarchical overtaking planners, demonstrating the advantages of unified planning-and-control optimization for time-efficient and collision-free overtaking.
+              <br/>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content column is-full-width ">
+    <h2 class="title is-4">BibTeX</h2>
+    <pre><code>
+      To be updated soon.
+    </code></pre>
+    <p>
+      A brief conference paper only employs reference velocity tracking for racing: <a href="https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=uLVKrmYAAAAJ&citation_for_view=uLVKrmYAAAAJ:hqOjcs7Dif8C"
+                   target="_blank">A Data-Driven Aggressive Autonomous Racing Framework Utilizing Local Trajectory Planning with Velocity Prediction</a> <br>
+      A simpler approach uses the racetrack's offline curvature to optimize the velocity profile of the local trajectory: <a href="https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=uLVKrmYAAAAJ&citation_for_view=uLVKrmYAAAAJ:8k81kl-MbHgC"
+                   target="_blank">Reduce Lap Time for Autonomous Racing with Curvature-Integrated MPCC Local Trajectory Planning Method</a>
+    </p>
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- TODO: -->
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+    <!-- TODO: -->
+      <a class="icon-link" href="" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is forked from the
+						<a href="https://nerfies.github.io/">Nerfies</a> and
+						<a href="https://github.com/nerfies/nerfies.github.io">source code</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./static/js/last_run.js"></script>
+
+</body>
+</html>
